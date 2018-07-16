@@ -1,22 +1,22 @@
 ﻿using Castle.Windsor;
 using TDI2D.Containers;
-using TDI2D.Interfaces;
+using TDI2D.ServiceLayer.Containers;
 
 namespace TDI2D
 {
     public class Engine : IEngine
     {
-        private IWindsorContainer _container;
-        private IEngineRoot _engineRoot;
+        private readonly IEngineRoot _engineRoot;
 
         public Engine()
         {
-            _container = new WindsorContainer();
-            _container.Install(new Installer());
+            var container = new WindsorContainer();
 
-            _engineRoot = _container.Resolve<IEngineRoot>();
+            container.Install(new Installer());
+            container.Install(new ServicesInstaller());
+
+            _engineRoot = container.Resolve<IEngineRoot>();
         }
-
 
         public void Start()
         {

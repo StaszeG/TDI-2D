@@ -1,13 +1,13 @@
 ﻿using System;
-using TDI2D.Interfaces;
+using TDI2D.WindowOperators;
 
 namespace TDI2D
 {
     internal class EngineRoot : IEngineRoot
     {
-        private readonly IWindowManager _windowManager;
+        private readonly IWindowOperator _windowManager;
 
-        public EngineRoot(IWindowManager windowManager)
+        public EngineRoot(IWindowOperator windowManager)
         {
             _windowManager = windowManager;
         }

@@ -2,9 +2,9 @@
 
 namespace SampleTestProject
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main()
         {
             var engine = new Engine();
             engine.Start();

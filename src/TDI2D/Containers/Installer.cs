@@ -1,7 +1,7 @@
 ﻿using Castle.MicroKernel.Registration;
 using Castle.MicroKernel.SubSystems.Configuration;
 using Castle.Windsor;
-using TDI2D.Interfaces;
+using TDI2D.WindowOperators;
 
 namespace TDI2D.Containers
 {
@@ -13,8 +13,8 @@ namespace TDI2D.Containers
                 .ImplementedBy<EngineRoot>()
                 .LifestyleTransient());
 
-            container.Register(Component.For<IWindowManager>()
-                .ImplementedBy<SfmlWindowManager>()
+            container.Register(Component.For<IWindowOperator>()
+                .ImplementedBy<SfmlWindowOperator>()
                 .LifestyleTransient());
         }
     }

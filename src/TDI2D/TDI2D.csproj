@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>TDI2D</RootNamespace>
     <AssemblyName>TDI2D</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -64,16 +65,22 @@
     <Compile Include="Containers\Installer.cs" />
     <Compile Include="Engine.cs" />
     <Compile Include="EngineRoot.cs" />
-    <Compile Include="Interfaces\IEngineRoot.cs" />
-    <Compile Include="Interfaces\IWindowManager.cs" />
+    <Compile Include="IEngineRoot.cs" />
+    <Compile Include="WindowOperators\IWindowOperator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SfmlWindowManager.cs" />
+    <Compile Include="WindowOperators\SfmlWindowManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TDI2D.ServiceLayer\TDI2D.ServiceLayer.csproj">
+      <Project>{61ff974d-048a-488b-b02a-513abfa9118d}</Project>
+      <Name>TDI2D.ServiceLayer</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

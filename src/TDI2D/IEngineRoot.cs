@@ -1,4 +1,4 @@
-﻿namespace TDI2D.Interfaces
+﻿namespace TDI2D
 {
     internal interface IEngineRoot
     {

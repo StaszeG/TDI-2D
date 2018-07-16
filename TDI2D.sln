@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TDI2D", "src\TDI2D\TDI2D.cs
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleTestProject", "samples\SampleTestProject\SampleTestProject.csproj", "{65ACC95A-D796-472F-A0FB-D23A7282D7D4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TDI2D.ServiceLayer", "src\TDI2D.ServiceLayer\TDI2D.ServiceLayer.csproj", "{61FF974D-048A-488B-B02A-513ABFA9118D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,8 +23,15 @@ Global
 		{65ACC95A-D796-472F-A0FB-D23A7282D7D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{65ACC95A-D796-472F-A0FB-D23A7282D7D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{65ACC95A-D796-472F-A0FB-D23A7282D7D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61FF974D-048A-488B-B02A-513ABFA9118D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61FF974D-048A-488B-B02A-513ABFA9118D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61FF974D-048A-488B-B02A-513ABFA9118D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61FF974D-048A-488B-B02A-513ABFA9118D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {82D8AF02-6E4E-4D54-924C-BC241B9BAC2A}
 	EndGlobalSection
 EndGlobal
