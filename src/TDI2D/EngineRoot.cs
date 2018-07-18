@@ -1,25 +1,40 @@
 ﻿using System;
+using TDI2D.Models;
+using TDI2D.ServiceLayer.Models;
+using TDI2D.ServiceLayer.Services;
 using TDI2D.WindowOperators;
 
 namespace TDI2D
 {
     internal class EngineRoot : IEngineRoot
     {
-        private readonly IGameWindow _windowManager;
+        private readonly IGameWindow _gameWindow;
+        private readonly IWindowSettingsService _windowSettingsService;
 
-        public EngineRoot(IGameWindow windowManager)
+        public EngineRoot(IGameWindow windowManager, IWindowSettingsService windowSettingsService)
         {
-            _windowManager = windowManager;
+            _gameWindow = windowManager;
+            _windowSettingsService = windowSettingsService;
         }
 
         public void Start()
         {
-            _windowManager.Open();
+            _gameWindow.Open();
         }
 
         public void Exit()
         {
-            _windowManager.Close();
+            _gameWindow.Close();
+        }
+
+        public void SetWindowSettings(WindowSettings windowSettings)
+        {
+            var model = AutoMapper.Mapper.Map<WindowSettingsModel>(windowSettings);
+            var result = _windowSettingsService.Set(model);
+            if (!result.IsSuccess)
+            {
+                throw new Exception("Can't set window settings.");
+            }
         }
     }
 }

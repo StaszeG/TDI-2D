@@ -1,24 +1,31 @@
 ﻿using System;
 using SFML.Graphics;
-using SFML.Window;
+using TDI2D.Models;
 using TDI2D.ServiceLayer.Services;
 
 namespace TDI2D.WindowOperators
 {
     internal class SfmlWindow : IGameWindow
     {
-        private readonly IWindowSettingsService _windowsSettings;
+        private readonly IWindowSettingsService _windowSettings;
 
         private RenderWindow _window;
 
-        public SfmlWindow(IWindowSettingsService windowsSettings)
+        public SfmlWindow(IWindowSettingsService windowSettings)
         {
-            _windowsSettings = windowsSettings;
+            _windowSettings = windowSettings;
         }
 
         public void Open()
         {
-            _window = new RenderWindow(new VideoMode(800, 600), "SFML Works!");
+            var windowSettingsResult = _windowSettings.Get();
+            if (!windowSettingsResult.IsSuccess)
+            {
+                throw new Exception("Can't get window settings");
+            }
+
+            var windowSettings = AutoMapper.Mapper.Map<WindowSettings>(windowSettingsResult.Response);
+            _window = AutoMapper.Mapper.Map<RenderWindow>(windowSettings);
             _window.Closed += OnClose;
 
             ManageWindowLoop();

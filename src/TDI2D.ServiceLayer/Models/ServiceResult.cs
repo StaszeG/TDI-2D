@@ -13,7 +13,7 @@
     public class ServiceResult<T> : ServiceResult
         where T : class
     {
-        public T Data { get; set; }
+        public T Response { get; set; }
 
         public ServiceResult(T data) : this(true, data)
         {
@@ -23,9 +23,9 @@
         {
         }
 
-        public ServiceResult(bool isSuccess, T data) : base(isSuccess)
+        public ServiceResult(bool isSuccess, T response) : base(isSuccess)
         {
-            Data = data;
+            Response = response;
         }
     }
 }
