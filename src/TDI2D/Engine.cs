@@ -22,10 +22,10 @@ namespace TDI2D
         {
             _engineRoot.Start();
         }
-    }
 
-    public interface IEngine
-    {
-        void Start();
+        public void Exit()
+        {
+            _engineRoot.Exit();
+        }
     }
 }

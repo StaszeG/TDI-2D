@@ -13,8 +13,8 @@ namespace TDI2D.Containers
                 .ImplementedBy<EngineRoot>()
                 .LifestyleTransient());
 
-            container.Register(Component.For<IWindowOperator>()
-                .ImplementedBy<SfmlWindowOperator>()
+            container.Register(Component.For<IGameWindow>()
+                .ImplementedBy<SfmlWindow>()
                 .LifestyleTransient());
         }
     }

@@ -65,10 +65,11 @@
     <Compile Include="Containers\Installer.cs" />
     <Compile Include="Engine.cs" />
     <Compile Include="EngineRoot.cs" />
+    <Compile Include="IEngine.cs" />
     <Compile Include="IEngineRoot.cs" />
-    <Compile Include="WindowOperators\IWindowOperator.cs" />
+    <Compile Include="GameWindow\IGameWindow.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="WindowOperators\SfmlWindowManager.cs" />
+    <Compile Include="GameWindow\SfmlWindow.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

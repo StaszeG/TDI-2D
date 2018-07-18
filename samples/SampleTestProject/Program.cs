@@ -1,13 +1,21 @@
-﻿using TDI2D;
+﻿using System;
+using System.Threading.Tasks;
+using TDI2D;
 
 namespace SampleTestProject
 {
     internal class Program
     {
+        private static readonly Engine _engine = new Engine();
+
         private static void Main()
         {
-            var engine = new Engine();
-            engine.Start();
+            Task.Run(() =>
+            {
+                _engine.Start();
+            });
+            Console.ReadKey();
+            _engine.Exit();
         }
     }
 }

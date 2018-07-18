@@ -1,6 +1,6 @@
 ﻿namespace TDI2D
 {
-    internal interface IEngineRoot
+    public interface IEngine
     {
         void Start();
         void Exit();
